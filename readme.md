@@ -1,20 +1,21 @@
-## Javascript / Jest
+# Javascript
+
+## Jest
 
 ### Generates a Jest it.each table block
 **Name**: iteach
 
-**Language:** js/ts
+#### Generates
 
-### Example
-**Generates**
+> it.each\` <br/>
+>    note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| given     | expected <br/>
+>    ${'should'}                                                            | ${{}} &nbsp;&nbsp;| ${{}} <br/>
+>    ${'should'}                                                            | ${{}} &nbsp;&nbsp;| ${{}} <br/>
+>   \`('$note given: $given expected: $expected ', async ({given, expected}) => { <br/>
+>    <br/>
+> }); <br/>
 
-> it.each\`
->    note &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| given     | expected               
->    ${'should'}    | ${{}} &nbsp;&nbsp;| ${{}}
->    ${'should'}    | ${{}} &nbsp;&nbsp;| ${{}}
->   \`('$note given: $given expected: $expected ', async ({given, expected}) => {
->   
-> });
+#### Template
 
 ```
 <template name="iteach" value="it.each`&#10;   note           | $NAME1$     | $NAME2$               &#10;   ${'should'}    | ${$VALUE1$} | ${$VALUE2$}&#10;   ${'should'}    | ${$VALUE1$} | ${$VALUE2$}&#10;  `('$note $NAME1$: $$$NAME1$ $NAME2$: $$$NAME2$ ', async ({$NAME1$, $NAME2$}) =&gt; {&#10;  $END$&#10;});" description="generates it each block" toReformat="false" toShortenFQNames="true">
@@ -30,10 +31,8 @@
 
 ### Creates a Jest mock from selected string
 **Name**: jmck
-
-**Language:** js/ts
  
-### Example
+#### Generates
 **From (if selected)**
 > '../src/example/path.ts'
 
@@ -43,6 +42,8 @@
 >   __esModule: true,
 >   default: jest.fn()
 > }));
+
+#### Template
 
 ```
 <template name="jmck" value="jest.mock($SELECTION$, () =&gt; ({&#10;  __esModule: true,&#10;  $END$default: jest.fn()&#10;}));" description="add a mock stub" toReformat="false" toShortenFQNames="true">
