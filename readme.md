@@ -59,3 +59,83 @@ jest.mock('../src/example/path.ts', () => ({
   </context>
 </template>
 ```
+
+# Java
+
+## Spring
+
+### Create a Spring Bean with a list of dependencies
+
+**Name*: BEAN
+
+#### Generates
+
+```java
+@Bean
+$CLASS_NAME$ $beanName$($PARAMETERS$) {
+    return new $CLASS_NAME$($parametersToPass$);
+}
+```
+
+#### Template
+
+<template name="BEAN" value="@org.springframework.context.annotation.Bean&#10;$CLASS_NAME$ $beanName$($PARAMETERS$) {&#10;    return new $CLASS_NAME$($parametersToPass$);&#10;}" description="Create a default Bean for a class." toReformat="true" toShortenFQNames="true" useStaticImport="true">
+  <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="beanName" expression="camelCase(CLASS_NAME)" defaultValue="" alwaysStopAt="false" />
+  <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="parametersToPass" expression="regularExpression(PARAMETERS, &quot;(^|,\\s*)\\S+\\s+&quot;, &quot;$1&quot;)" defaultValue="" alwaysStopAt="false" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+
+## JUnit
+
+### Generate a JUnit5 unit test
+
+**Name**: TEST
+
+#### Generates
+
+```java
+@Test
+@DisplayName("$TEST_TITLE$")
+void $TEST_NAME$() {
+    $END$
+}
+```
+
+#### Template
+
+```
+<template name="TEST" value="@org.junit.jupiter.api.Test&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_TITLE$&quot;)&#10;void $TEST_NAME$() {&#10;    $END$&#10;}" description="Create a standard JUnit5 test." toReformat="false" toShortenFQNames="true">
+  <variable name="TEST_TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="TEST_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+```
+
+## Hamcrest
+
+### Generate a Hamcrest `is` assert and static import matchers
+
+**Name**: ASSIS
+
+#### Generates
+
+```java
+assertThat($expression$, is($expected$));
+```
+
+#### Template
+
+<template name="ASSIS" value="org.hamcrest.MatcherAssert.assertThat($expression$, org.hamcrest.Matchers.is($expected$));" description="Hamcrest assertThat(x, is())" toReformat="false" toShortenFQNames="true" useStaticImport="true">
+  <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="expected" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_EXPRESSION" value="true" />
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
