@@ -62,15 +62,15 @@ jest.mock('../src/example/path.ts', () => ({
 </template>
 ```
 
-# Java
+## Java
 
-## Spring
+### Spring
 
-### Create a Spring Bean with a list of dependencies
+#### Create a Spring Bean with a list of dependencies
 
 **Name*: BEAN
 
-#### Generates
+##### Generates
 
 ```java
 @Bean
@@ -79,7 +79,7 @@ $CLASS_NAME$ $beanName$($PARAMETERS$) {
 }
 ```
 
-#### Template
+##### Template
 
 <template name="BEAN" value="@org.springframework.context.annotation.Bean&#10;$CLASS_NAME$ $beanName$($PARAMETERS$) {&#10;    return new $CLASS_NAME$($parametersToPass$);&#10;}" description="Create a default Bean for a class." toReformat="true" toShortenFQNames="true" useStaticImport="true">
   <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
@@ -91,13 +91,13 @@ $CLASS_NAME$ $beanName$($PARAMETERS$) {
   </context>
 </template>
 
-## JUnit
+### JUnit
 
-### Generate a JUnit5 unit test
+#### Generate a JUnit5 unit test
 
 **Name**: TEST
 
-#### Generates
+##### Generates
 
 ```java
 @Test
@@ -107,7 +107,7 @@ void $TEST_NAME$() {
 }
 ```
 
-#### Template
+##### Template
 
 ```
 <template name="TEST" value="@org.junit.jupiter.api.Test&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_TITLE$&quot;)&#10;void $TEST_NAME$() {&#10;    $END$&#10;}" description="Create a standard JUnit5 test." toReformat="false" toShortenFQNames="true">
@@ -119,19 +119,19 @@ void $TEST_NAME$() {
 </template>
 ```
 
-## Hamcrest
+### Hamcrest
 
-### Generate a Hamcrest `is` assert and static import matchers
+#### Generate a Hamcrest `is` assert and static import matchers
 
 **Name**: ASSIS
 
-#### Generates
+##### Generates
 
 ```java
 assertThat($expression$, is($expected$));
 ```
 
-#### Template
+##### Template
 
 <template name="ASSIS" value="org.hamcrest.MatcherAssert.assertThat($expression$, org.hamcrest.Matchers.is($expected$));" description="Hamcrest assertThat(x, is())" toReformat="false" toShortenFQNames="true" useStaticImport="true">
   <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
