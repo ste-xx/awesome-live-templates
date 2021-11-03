@@ -1,5 +1,18 @@
 # Awesome Intellij Live Templates
 
+> A curated list of awesome Intellij Live Templates
+- [Javascript](#javascript)
+  - [Jest](#jest)
+    - [Generates a Jest it.each table block](#generates-a-jest-iteach-table-block)
+    - [Creates a Jest mock from selected string](#creates-a-jest-mock-from-selected-string)
+ - [Java](#java)
+    - [Spring](#spring)
+      - [Create a Spring Bean with a list of dependencies](#create-a-spring-bean-with-a-list-of-dependencies)
+    - [JUnit](#junit)
+      - [Generate a JUnit5 unit test](#create-a-spring-bean-with-a-list-of-dependencies)
+    - [Hamcrest](#hamcrest)
+      - [Generate a Hamcrest `is` assert and static import matchers](generate-a-hamcrest-`is`-assert-and-static-import-matchers)
+
 ## Javascript
 
 ### Jest
