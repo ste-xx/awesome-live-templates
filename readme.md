@@ -81,6 +81,7 @@ $CLASS_NAME$ $beanName$($PARAMETERS$) {
 
 ##### Template
 
+```xml
 <template name="BEAN" value="@org.springframework.context.annotation.Bean&#10;$CLASS_NAME$ $beanName$($PARAMETERS$) {&#10;    return new $CLASS_NAME$($parametersToPass$);&#10;}" description="Create a default Bean for a class." toReformat="true" toShortenFQNames="true" useStaticImport="true">
   <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
   <variable name="beanName" expression="camelCase(CLASS_NAME)" defaultValue="" alwaysStopAt="false" />
@@ -90,6 +91,7 @@ $CLASS_NAME$ $beanName$($PARAMETERS$) {
     <option name="JAVA_DECLARATION" value="true" />
   </context>
 </template>
+```
 
 ### JUnit
 
@@ -133,6 +135,7 @@ assertThat($expression$, is($expected$));
 
 ##### Template
 
+```xml
 <template name="ASSIS" value="org.hamcrest.MatcherAssert.assertThat($expression$, org.hamcrest.Matchers.is($expected$));" description="Hamcrest assertThat(x, is())" toReformat="false" toShortenFQNames="true" useStaticImport="true">
   <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
   <variable name="expected" expression="" defaultValue="" alwaysStopAt="true" />
@@ -141,3 +144,4 @@ assertThat($expression$, is($expected$));
     <option name="JAVA_STATEMENT" value="true" />
   </context>
 </template>
+```
