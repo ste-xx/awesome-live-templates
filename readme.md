@@ -68,7 +68,7 @@ jest.mock('../src/example/path.ts', () => ({
 
 #### Create a Spring Bean with a list of dependencies
 
-**Name*: BEAN
+**Name**: BEAN
 
 ##### Generates
 
