@@ -1,11 +1,13 @@
-# Javascript
+# Awesome Intellij Live Templates
 
-## Jest
+## Javascript
 
-### Generates a Jest it.each table block
+### Jest
+
+#### Generates a Jest it.each table block
 **Name**: iteach
 
-#### Generates
+##### Generates
 
 ```javascript
 it.each`
@@ -16,7 +18,7 @@ it.each`
   
   }); 
 ```
-#### Template
+##### Template
 
 ```xml
 <template name="iteach" value="it.each`&#10;   note           | $NAME1$     | $NAME2$               &#10;   ${'should'}    | ${$VALUE1$} | ${$VALUE2$}&#10;   ${'should'}    | ${$VALUE1$} | ${$VALUE2$}&#10;  `('$note $NAME1$: $$$NAME1$ $NAME2$: $$$NAME2$ ', async ({$NAME1$, $NAME2$}) =&gt; {&#10;  $END$&#10;});" description="generates it each block" toReformat="false" toShortenFQNames="true">
@@ -30,10 +32,10 @@ it.each`
 </template>
 ```
 
-### Creates a Jest mock from selected string
+#### Creates a Jest mock from selected string
 **Name**: jmck
  
-#### Generates
+##### Generates
 **From (if selected)**
 ```
 '../src/example/path.ts'
@@ -47,7 +49,7 @@ jest.mock('../src/example/path.ts', () => ({
 }));
 ```
 
-#### Template
+##### Template
 
 ```xml
 <template name="jmck" value="jest.mock($SELECTION$, () =&gt; ({&#10;  __esModule: true,&#10;  $END$default: jest.fn()&#10;}));" description="add a mock stub" toReformat="false" toShortenFQNames="true">
