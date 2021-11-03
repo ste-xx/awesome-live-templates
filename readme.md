@@ -3,7 +3,7 @@
 > A curated list of awesome Intellij Live Templates
 - [Javascript](#javascript)
   - [Jest](#jest)
-    - [Generates a Jest it.each table block](#generates-a-jest-iteach-table-block)
+    - [Generates a Jest `it.each` table block](#generates-a-jest-iteach-table-block)
     - [Creates a Jest mock from selected string](#creates-a-jest-mock-from-selected-string)
  - [Java](#java)
     - [Spring](#spring)
@@ -17,7 +17,7 @@
 
 ### Jest
 
-#### Generates a Jest it.each table block
+#### Generates a Jest `it.each` table block
 **Name**: iteach
 
 ##### Generates
